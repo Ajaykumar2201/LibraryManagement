@@ -1,0 +1,266 @@
+<?php include'db_conn.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/intex.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="logo">
+                <img src="image\logo.png " alt="error">
+            </div>
+
+
+             <div class="liblogo">
+                <img src="image/liblogo.png"align="right" alt="error">
+            </div>
+
+            <div class="menu">
+            <h1>
+                <a id="library">Library</a> 
+            </h1>
+            <center>    <ul>
+            
+                <li><a  href="#home">home</a></li>
+                <li><a  href="#services">Services</a></li>
+                <li><a  href="#book">Books</a></li>
+                <li><a  href="#contact">Contact</a></li>
+                <p><li><a href="frame.php">Login</a></li></p>
+                </ul>
+            </center>
+            </div>
+        </div>
+
+
+        <div class="college">
+            <img src="image/sr.jpg" alt="err">
+            
+        </div>
+        <a id="services"><center>Services</center></a>
+    <div class="service">
+        <div class="offline">
+            <img src="image/library/offline.png" width="70px"height="70px" alt="errorr">
+            <h1>OFFLINE</h1>
+            <p>It has 7767 volumes of text and reference books on various disciplines.<br> 
+                The library subscribes 45 magazines, 7 journals and 9 leading Newspapers. <br>
+                The library is following the open access system and provides its service  
+                to meet the requirement of U.G&P.G Students and M.Phil.  <br>
+                 Scholars and staff members of the college.
+                Working hours 9.00 a.m to 5.00 p.m.</p>
+            
+        </div>
+        <div class="online">
+            <img src="image/library/online.png" width="70px"height="70px" alt="errorr">
+            <h1>ONLINE</h1>
+            <p>More than 5000 books are available in many genres. <br>
+You can view it online or download the PDF book to your computer. <br>
+You can identify whether your favorite book is available or not.</p>
+            
+        </div>
+
+        <div class="get">
+            <img src="image/library/get.jpg" width="100px"height="100px" alt="errorr">
+            <h1>ANYWHERE ELSE</h1>
+            
+            
+            <p>Take the books you need with you,per person maximum 5 books . <br>
+Must be refunded within 10 days, <br>
+If you need more than that you should inform the librarian.</p>
+            
+            </div>
+        
+
+    </div>
+    
+        <a id="book" ><center>Books</center></a>
+        <div class="book-area">     
+        <div class="book-menu">
+            <center>
+            <ul>
+                
+                <li><a href="#history">History</a></li>
+                <li><a href="#general"> General</a></li>
+                 <li><a href="#commerce"> Commerce</a></li>
+                <li><a href="#science">Computer Science</a></li>
+                <li><a href="#story">Space</a></li>
+                <li><a href="#english">Tamil</a></li>
+            </ul>    
+        </center>    
+    </div>
+
+    <div class="book-dash">
+        
+        <div class="scroll-div">
+            <div class="books">
+
+                <a id="history"><center>History</center></a>
+                <div class="hbook">
+                    <?php 
+    $sql = "SELECT * FROM history";
+    $res = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($res)>0) {
+        while ($rows=mysqli_fetch_array($res)) {?>
+            
+            <a href="history php files/history/<?php echo $rows['pdf_url']?>"><img src="history php files/history/image/<?php echo $rows['image_url']?>"alt="errorr"></a>
+           
+    <?php   }  } ?>
+                            
+                 
+
+
+                </div>
+                
+                        
+            <a id="general"><center>General</center></a>
+                <div class="hbook">
+                  <?php 
+    $sql = "SELECT * FROM general";
+    $res = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($res)>0) {
+        while ($rows=mysqli_fetch_array($res)) {?>
+            
+            <a href="general php files/general/<?php echo $rows['pdf_url']?>"><img src="general php files/general/image/<?php echo $rows['image_url']?>"alt="errorr"></a>
+           
+    <?php   }  } ?>
+                   
+                   
+                
+                </div>
+
+                 <a id="commerce">Commerce</a>
+                <div class="hbook">
+                    <?php 
+    $sql = "SELECT * FROM commerce";
+    $res = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($res)>0) {
+        while ($rows=mysqli_fetch_array($res)) {?>
+            
+            <a href="commerce php files/commerce/<?php echo $rows['pdf_url']?>"><img src="commerce php files/commerce/image/<?php echo $rows['image_url']?>"alt="errorr"></a>
+           
+    <?php   }  } ?>
+
+                </div>
+
+
+            <a id="science">computer Science</a>
+                <div class="hbook">
+                    <?php 
+    $sql = "SELECT * FROM cs";
+    $res = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($res)>0) {
+        while ($rows=mysqli_fetch_array($res)) {?>
+            
+            <a href="cs php files/cs/<?php echo $rows['pdf_url']?>"><img src="cs php files/cs/image/<?php echo $rows['image_url']?>"alt="errorr"></a>
+           
+    <?php   }  } ?>
+
+                </div>
+
+            <a id="story">Space</a>
+                <div class="hbook">
+                    <?php
+    $sql = "SELECT * FROM space";
+    $res = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($res)>0) {
+        while ($rows=mysqli_fetch_array($res)) {?>
+            
+            <a href="space php files/space/<?php echo $rows['pdf_url']?>"><img src="space php files/space/image/<?php echo $rows['image_url']?>"alt="errorr"></a>
+           
+    <?php   }  } ?>
+
+                </div>
+                <a id="english">Tamil</a>
+                <div class="hbook">
+                     <?php 
+    $sql = "SELECT * FROM tamil";
+    $res = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($res)>0) {
+        while ($rows=mysqli_fetch_array($res)) {?>
+            
+            <a href="tamil php files/tamil/<?php echo $rows['pdf_url']?>"><img src="tamil php files/tamil/image/<?php echo $rows['image_url']?>"alt="errorr"></a>
+           
+    <?php   }  } ?>
+
+                </div>
+
+        </div>
+
+
+    
+
+    </div>
+    </div>
+        </div>
+        <div class="details">
+        <h1><center>More Details</center></h1>
+    </div>
+    <div class="contact">
+       
+        <a id="contact"><center><h1>contact</h1></center></a>
+
+        <div class="col">
+            <p><h2> COLLEGE</h2></p>
+            <h4>
+                Sri S.Ramaswamy Naidu Memorial College,<br>
+                Sattur-626 203,Virudhunagar(DT),
+                Tamilnadu<br>
+                College Office-9486760326<br>
+                E-Mail-srnmc@gmail.com<br><br>
+                <img src="image/library/2.jpg" alt="errorr">
+                <img src="image/library/3.jpg" alt="error">
+                <img src="image/library/4.jpg" alt="errorr">
+            </h4>
+            
+        </div>
+        <div class="map">
+            <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3937.0457495453716!2d77.91481241460988!3d9.329213993312965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06b5507e2108a5%3A0xb529caa1e886b291!2sSri%20Ramasamy%20Naidu%20Memorial%20College!5e0!3m2!1sen!2sin!4v1614490706461!5m2!1sen!2sin"
+                 width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </p>
+        </div>
+        <div class="lib">
+            <p><h2> LIBRARY</h2></p>
+            <h4>Location: L Block<br>
+            Lanline: 04632-225389
+            </h4><br>
+            <br>
+            <br>
+
+            <img src="image/library/user.png" alt="">
+
+            <p><h2> Incharge</h2></p>
+            <h4>Name:Ms.Mahalakshmi B.Com<br>
+            Mobile: 9649553626<br>
+            E-Mail: maha@gmail.com
+            </h4>
+            
+        </div>
+        
+    </div>
+    
+
+
+
+
+<div class="goup">
+    <a href="#library"><img src="image/library/up.png " alt="error"></a>
+    </div>
+        
+    </div>
+   
+    
+</body>
+</html>

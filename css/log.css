@@ -1,0 +1,55 @@
+
+		*{
+			margin:0%;
+			padding: 0%;
+            background: -webkit-linear-gradient(left, #0067f4 0%, #2bdbdc 100%);
+    background: -o-linear-gradient(left, #0067f4 0%, #2bdbdc 100%);
+    background: linear-gradient(to right, #0067f4 0%, #2bdbdc 100%);
+}
+		.container
+		{
+			top:50%;
+			left:50%;
+			position: absolute;
+			transform: translate(-50%,-50%);
+			 border: none;
+		}
+		.card
+		{    
+             padding: 60px 40px 50px 40px;
+             background: rgb(25, 25, 25);
+             border-radius: 15px;
+
+
+		}
+		#name{
+            width:200px;
+			border:none;
+			background: transparent;
+			border-bottom: 1px solid white ;
+			padding: 6px;
+			margin-bottom :20px;
+			 color:white;
+		}
+						#password{
+            width:200px;
+			border:none;
+			background: transparent;
+			border-bottom: 1px solid white ;
+			padding: 6px;
+			margin-bottom :20px;
+			 color:white;
+		}
+		.button
+		{
+			border-radius:20px;
+			padding: 10px 20px;
+			background: dodgerblue;
+			color:white;
+			margin-top:20px;
+			border:none;
+			outline:none;
+			margin-left:50px;
+			
+		}
+	
